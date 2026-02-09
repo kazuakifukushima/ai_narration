@@ -34,7 +34,9 @@ RUN adduser --system --uid 1001 nextjs
 RUN mkdir -p data public/audio public/uploads
 RUN chown -R nextjs:nodejs data public/audio public/uploads
 
-COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+# Ensure uploads directory is writable
+RUN mkdir -p public/uploads public/audio && chown -R nextjs:nodejs public/uploads public/audio
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
