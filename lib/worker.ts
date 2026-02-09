@@ -1,4 +1,4 @@
-import { saveJob, saveJobResult, updateJob } from './db';
+import { saveJobResult, updateJob } from './db';
 import { Job } from '@/types/job';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { TextToSpeechClient } from '@google-cloud/text-to-speech';
@@ -7,7 +7,6 @@ import * as path from 'path';
 
 // --- Configuration ---
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-// Note: Google TTS uses GOOGLE_APPLICATION_CREDENTIALS implicitly
 
 if (!GEMINI_API_KEY) {
     console.warn('GEMINI_API_KEY is not set. Mock mode might be preferred if testing without keys.');
@@ -15,15 +14,35 @@ if (!GEMINI_API_KEY) {
     console.log('GEMINI_API_KEY is detected (length: ' + GEMINI_API_KEY.length + ')');
 }
 
-if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-    console.log('GOOGLE_APPLICATION_CREDENTIALS: ' + process.env.GOOGLE_APPLICATION_CREDENTIALS);
-    if (!fs.existsSync(process.env.GOOGLE_APPLICATION_CREDENTIALS)) {
-        console.error('ERROR: Credentials file does not exist at specified path!');
-    } else {
-        console.log('Credentials file found.');
+// --- Google Cloud TTS Credentials ---
+// Support both file-based (GOOGLE_APPLICATION_CREDENTIALS) and
+// env-var-based (GOOGLE_CREDENTIALS_JSON) authentication for Render deployment
+function createTTSClient(): TextToSpeechClient {
+    // Option 1: Credentials JSON passed directly as env var (recommended for Render)
+    if (process.env.GOOGLE_CREDENTIALS_JSON) {
+        console.log('Using GOOGLE_CREDENTIALS_JSON env var for TTS authentication.');
+        try {
+            const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
+            return new TextToSpeechClient({ credentials });
+        } catch (e) {
+            console.error('ERROR: Failed to parse GOOGLE_CREDENTIALS_JSON:', e);
+        }
     }
-} else {
-    console.warn('GOOGLE_APPLICATION_CREDENTIALS not set.');
+
+    // Option 2: File-based credentials (GOOGLE_APPLICATION_CREDENTIALS)
+    if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+        console.log('GOOGLE_APPLICATION_CREDENTIALS: ' + process.env.GOOGLE_APPLICATION_CREDENTIALS);
+        if (!fs.existsSync(process.env.GOOGLE_APPLICATION_CREDENTIALS)) {
+            console.error('ERROR: Credentials file does not exist at specified path!');
+        } else {
+            console.log('Credentials file found.');
+        }
+    } else {
+        console.warn('No Google Cloud credentials configured. Set GOOGLE_CREDENTIALS_JSON or GOOGLE_APPLICATION_CREDENTIALS.');
+    }
+
+    // Default: relies on GOOGLE_APPLICATION_CREDENTIALS or ADC
+    return new TextToSpeechClient();
 }
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY || '');
@@ -48,7 +67,7 @@ export async function startJob(jobId: string, groupId: string, filePath: string,
         updateStatus(jobId, groupId, 'analyzing', 10);
 
         // 1. Vision Analysis (Gemini)
-        log(`[${jobId}] Calling Gemini Vision (3.0 Flash Preview)...`);
+        log(`[${jobId}] Calling Gemini Vision...`);
 
         const imagePart = fileToGenerativePart(filePath, 'image/jpeg');
         const prompt = `
@@ -76,22 +95,18 @@ export async function startJob(jobId: string, groupId: string, filePath: string,
     `;
 
         // Retry logic for Gemini API
+        // gemini-1.5-flash is retired (404). gemini-2.0-flash-exp is deprecated (March 2026).
+        // Use gemini-2.5-flash (stable) as primary, gemini-2.0-flash as fallback.
         let text = '';
         const maxRetries = 3;
         for (let attempt = 1; attempt <= maxRetries; attempt++) {
             try {
-                // Use a stable model for fallback if retries fail, or sticking to flash-preview
-                // To be safe, let's try flash-preview first, then fallback to 1.5-flash if needed.
-                const modelName = attempt === maxRetries ? "gemini-1.5-flash" : "gemini-2.0-flash-exp";
-                // Note: The user was using 'gemini-3-flash-preview', let's try 'gemini-2.0-flash-exp' or 'gemini-1.5-flash' as they are more stable?
-                // Actually, let's stick to the requested model but fallback.
-
-                const currentModelName = attempt === 1 ? "gemini-2.0-flash-exp" : "gemini-1.5-flash";
+                const currentModelName = attempt <= 2 ? "gemini-2.5-flash" : "gemini-2.0-flash";
                 log(`[${jobId}] Calling Gemini Vision (${currentModelName}) - Attempt ${attempt}/${maxRetries}`);
 
                 const model = genAI.getGenerativeModel({ model: currentModelName });
                 const result = await model.generateContent([prompt, imagePart]);
-                const response = await result.response;
+                const response = result.response;
                 text = response.text();
                 break; // Success
             } catch (e: any) {
@@ -112,7 +127,7 @@ export async function startJob(jobId: string, groupId: string, filePath: string,
 
         // 2. Text-to-Speech (Google Cloud TTS)
         log(`[${jobId}] Calling TTS... Voice: ${voiceId || 'default'}`);
-        const ttsClient = new TextToSpeechClient();
+        const ttsClient = createTTSClient();
         const request = {
             input: { text: script },
             voice: { languageCode: 'ja-JP', name: voiceId || 'ja-JP-Neural2-B' }, // Use selected voice or default (Female)

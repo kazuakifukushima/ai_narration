@@ -13,9 +13,9 @@ services:
         value: 3000
       - key: GEMINI_API_KEY
         sync: false # User must enter manually
-      - key: GOOGLE_APPLICATION_CREDENTIALS
-        value: /etc/secrets/google-credentials.json
-        
+      - key: GOOGLE_CREDENTIALS_JSON
+        sync: false # Paste the full google-credentials.json content here
+
     # Note: Free Tier does not support persistent disks.
     # Data will be lost on restart.
 
