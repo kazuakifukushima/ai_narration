@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ job_id: jobId });
     } catch (e) {
-        console.error(e);
-        return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
+        console.error('Upload Error Details:', e);
+        return NextResponse.json({ error: 'Upload failed: ' + (e as Error).message }, { status: 500 });
     }
 }

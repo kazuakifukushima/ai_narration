@@ -11,6 +11,19 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 if (!GEMINI_API_KEY) {
     console.warn('GEMINI_API_KEY is not set. Mock mode might be preferred if testing without keys.');
+} else {
+    console.log('GEMINI_API_KEY is detected (length: ' + GEMINI_API_KEY.length + ')');
+}
+
+if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+    console.log('GOOGLE_APPLICATION_CREDENTIALS: ' + process.env.GOOGLE_APPLICATION_CREDENTIALS);
+    if (!fs.existsSync(process.env.GOOGLE_APPLICATION_CREDENTIALS)) {
+        console.error('ERROR: Credentials file does not exist at specified path!');
+    } else {
+        console.log('Credentials file found.');
+    }
+} else {
+    console.warn('GOOGLE_APPLICATION_CREDENTIALS not set.');
 }
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY || '');
