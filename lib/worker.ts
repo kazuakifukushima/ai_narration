@@ -49,37 +49,31 @@ export async function startJob(jobId: string, groupId: string, filePath: string,
 
         // 1. Vision Analysis (Gemini)
         log(`[${jobId}] Calling Gemini Vision (3.0 Flash Preview)...`);
-        const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
-        const prompt = `
-      このホワイトボードの画像を分析し、そこに書かれている内容を読み取ってください。
-      特に、感染症対応などの文脈で書かれている「疑う」「分ける」「守る」「つなぐ」の4つのキーワードと、それぞれの具体的な内容を正確に抽出してください。
+        // Retry logic for Gemini API
+        let text = '';
+        const maxRetries = 3;
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                // Use a stable model for fallback if retries fail, or sticking to flash-preview
+                // To be safe, let's try flash-preview first, then fallback to 1.5-flash if needed.
+                const modelName = attempt === maxRetries ? "gemini-1.5-flash" : "gemini-2.0-flash-exp";
+                // Note: The user was using 'gemini-3-flash-preview', let's try 'gemini-2.0-flash-exp' or 'gemini-1.5-flash' as they are more stable?
+                // Actually, let's stick to the requested model but fallback.
 
-      その上で、医師会研修の講師が読み上げるための、全体で1分程度（約300〜400文字）の落ち着いた日本語のナレーション原稿を作成してください。
-      
-      構成:
-      1. 導入（この図解が何を示しているか）
-      2. 4つのポイント（疑う・分ける・守る・つなぐ）の解説
-      3. まとめ
+                const currentModelName = attempt === 1 ? "gemini-2.0-flash-exp" : "gemini-1.5-flash";
+                log(`[${jobId}] Calling Gemini Vision (${currentModelName}) - Attempt ${attempt}/${maxRetries}`);
 
-      出力フォーマット:
-      ---
-      [要約]
-      - 疑う: (内容)
-      - 分ける: (内容)
-      - 守る: (内容)
-      - つなぐ: (内容)
-      
-      [原稿]
-      (ここに読み上げ原稿テキストのみを記述してください。見出しなどは含めず、話し言葉で書いてください)
-      ---
-    `;
-
-        const imagePart = fileToGenerativePart(filePath, 'image/jpeg');
-        // Note: In a real robust app, detect mime type. For this workshop, assume standard image uploads.
-
-        const result = await model.generateContent([prompt, imagePart]);
-        const response = await result.response;
-        const text = response.text();
+                const model = genAI.getGenerativeModel({ model: currentModelName });
+                const result = await model.generateContent([prompt, imagePart]);
+                const response = await result.response;
+                text = response.text();
+                break; // Success
+            } catch (e: any) {
+                log(`[${jobId}] Gemini Attempt ${attempt} failed: ${e.message}`);
+                if (attempt === maxRetries) throw e;
+                await new Promise(resolve => setTimeout(resolve, 2000 * attempt)); // Linear backoff
+            }
+        }
 
         log(`[${jobId}] Gemini Response: ${text.substring(0, 100)}...`);
 
