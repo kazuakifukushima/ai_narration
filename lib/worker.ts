@@ -29,9 +29,7 @@ if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY || '');
 
 function log(msg: string) {
-    const line = `[${new Date().toISOString()}] ${msg}\n`;
-    console.log(msg);
-    fs.appendFileSync(path.join(process.cwd(), 'worker-log.txt'), line);
+    console.log(`[${new Date().toISOString()}] ${msg}`);
 }
 
 // --- Helpers ---

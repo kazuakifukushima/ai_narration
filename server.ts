@@ -18,9 +18,7 @@ const DATA_FILE = path.join(process.cwd(), 'data/jobs.json');
 const clients = new Map<string, Set<WebSocket>>();
 
 function log(msg: string) {
-    const line = `[${new Date().toISOString()}] ${msg}\n`;
-    console.log(msg);
-    // Optional: write to file if needed, but stdout is better for Docker
+    console.log(`[${new Date().toISOString()}] ${msg}`);
 }
 
 function readJobs(): any[] {

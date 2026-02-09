@@ -32,7 +32,7 @@ RUN adduser --system --uid 1001 nextjs
 
 # Create writable directories for data persistence (if volume mounted)
 RUN mkdir -p data public/audio public/uploads
-RUN chown -R nextjs:nodejs data public/audio public/uploads
+RUN mkdir -p data public/audio public/uploads && chown -R nextjs:nodejs data public/audio public/uploads
 
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 # Ensure uploads directory is writable
