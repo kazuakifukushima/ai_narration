@@ -49,6 +49,32 @@ export async function startJob(jobId: string, groupId: string, filePath: string,
 
         // 1. Vision Analysis (Gemini)
         log(`[${jobId}] Calling Gemini Vision (3.0 Flash Preview)...`);
+
+        const imagePart = fileToGenerativePart(filePath, 'image/jpeg');
+        const prompt = `
+      このホワイトボードの画像を分析し、そこに書かれている内容を読み取ってください。
+      特に、感染症対応などの文脈で書かれている「疑う」「分ける」「守る」「つなぐ」の4つのキーワードと、それぞれの具体的な内容を正確に抽出してください。
+
+      その上で、医師会研修の講師が読み上げるための、全体で1分程度（約300〜400文字）の落ち着いた日本語のナレーション原稿を作成してください。
+      
+      構成:
+      1. 導入（この図解が何を示しているか）
+      2. 4つのポイント（疑う・分ける・守る・つなぐ）の解説
+      3. まとめ
+
+      出力フォーマット:
+      ---
+      [要約]
+      - 疑う: (内容)
+      - 分ける: (内容)
+      - 守る: (内容)
+      - つなぐ: (内容)
+      
+      [原稿]
+      (ここに読み上げ原稿テキストのみを記述してください。見出しなどは含めず、話し言葉で書いてください)
+      ---
+    `;
+
         // Retry logic for Gemini API
         let text = '';
         const maxRetries = 3;
