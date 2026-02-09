@@ -49,6 +49,52 @@ app.prepare().then(() => {
             const parsedUrl = parse(req.url!, true);
             const { pathname, query } = parsedUrl;
 
+            // Serve dynamically generated files (audio, uploads) directly
+            // Next.js production mode may not serve files created after build
+            if (pathname && (pathname.startsWith('/audio/') || pathname.startsWith('/uploads/'))) {
+                const filePath = path.join(process.cwd(), 'public', pathname);
+                try {
+                    await fs.promises.access(filePath, fs.constants.F_OK);
+                    const ext = path.extname(filePath).toLowerCase();
+                    const mimeTypes: Record<string, string> = {
+                        '.mp3': 'audio/mpeg',
+                        '.wav': 'audio/wav',
+                        '.jpg': 'image/jpeg',
+                        '.jpeg': 'image/jpeg',
+                        '.png': 'image/png',
+                    };
+                    const contentType = mimeTypes[ext] || 'application/octet-stream';
+                    const stat = await fs.promises.stat(filePath);
+
+                    // Support Range requests for audio streaming
+                    const range = req.headers.range;
+                    if (range) {
+                        const parts = range.replace(/bytes=/, '').split('-');
+                        const start = parseInt(parts[0], 10);
+                        const end = parts[1] ? parseInt(parts[1], 10) : stat.size - 1;
+                        res.writeHead(206, {
+                            'Content-Range': `bytes ${start}-${end}/${stat.size}`,
+                            'Accept-Ranges': 'bytes',
+                            'Content-Length': end - start + 1,
+                            'Content-Type': contentType,
+                        });
+                        fs.createReadStream(filePath, { start, end }).pipe(res);
+                    } else {
+                        res.writeHead(200, {
+                            'Content-Length': stat.size,
+                            'Content-Type': contentType,
+                            'Accept-Ranges': 'bytes',
+                        });
+                        fs.createReadStream(filePath).pipe(res);
+                    }
+                    return;
+                } catch {
+                    res.writeHead(404);
+                    res.end('Not found');
+                    return;
+                }
+            }
+
             // Handle Internal Notification (replacing the separate process on port 3002)
             if (req.method === 'POST' && pathname === '/notify-update') {
                 let body = '';
@@ -76,18 +122,28 @@ app.prepare().then(() => {
         }
     });
 
-    const wss = new WebSocketServer({ server });
+    const wss = new WebSocketServer({ noServer: true });
 
-    wss.on('connection', (ws, req) => {
+    // Only handle upgrade for workshop WS connections, not Next.js HMR
+    server.on('upgrade', (req, socket, head) => {
         const url = new URL(req.url || '', `http://${req.headers.host}`);
         const workshopId = url.searchParams.get('workshop_id');
 
-        log(`New connection request. URL: ${req.url}, workshopId: ${workshopId}`);
-
         if (!workshopId) {
-            ws.close(1008, 'workshop_id required');
+            // Let Next.js handle HMR and other WS connections
             return;
         }
+
+        wss.handleUpgrade(req, socket, head, (ws) => {
+            wss.emit('connection', ws, req);
+        });
+    });
+
+    wss.on('connection', (ws, req) => {
+        const url = new URL(req.url || '', `http://${req.headers.host}`);
+        const workshopId = url.searchParams.get('workshop_id')!;
+
+        log(`[WS] New connection: workshopId=${workshopId}`);
 
         if (!clients.has(workshopId)) {
             clients.set(workshopId, new Set());
@@ -95,7 +151,7 @@ app.prepare().then(() => {
         clients.get(workshopId)!.add(ws);
 
         // Send initial snapshot
-        const jobs = readJobs().filter(j => j.group_id?.startsWith(workshopId) || true);
+        const jobs = readJobs();
         ws.send(JSON.stringify({ type: 'snapshot', jobs }));
 
         ws.on('close', () => {
