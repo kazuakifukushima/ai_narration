@@ -15,11 +15,7 @@ services:
         sync: false # User must enter manually
       - key: GOOGLE_APPLICATION_CREDENTIALS
         value: /etc/secrets/google-credentials.json
-    disk:
-      name: app-data
-      mountPath: /app/data
-      sizeGB: 1
+        
+    # Note: Free Tier does not support persistent disks.
+    # Data will be lost on restart.
 
-    # Secret files are simpler in Render via Dashboard, 
-    # but Blueprint supports mounting files from secret groups.
-    # For simplicity, we'll guide the user to use the Dashboard for the secret file.
