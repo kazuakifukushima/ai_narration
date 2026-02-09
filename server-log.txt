@@ -1,0 +1,306 @@
+[2026-01-09T13:00:44.089Z] WebSocket Server running on ws://localhost:3001
+[2026-01-09T13:00:44.091Z] Internal Notification Server running on http://localhost:3002
+[2026-01-09T13:00:52.918Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:00:52.925Z] [HTTP] Body: {"workshopId": "ws_2026_demo", "job": {"job_id": "test", "group_id": "TEST", "status": "done"}}
+[2026-01-09T13:00:52.925Z] [WS] Broadcasting update for ws_2026_demo to 0 clients. Job: done
+[2026-01-09T13:01:20.580Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:01:20.591Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:01:29.189Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:01:29.193Z] [HTTP] Body: {"job":{"job_id":"job_1767963689160_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:01:29.193Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:01:31.189Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:01:31.193Z] [HTTP] Body: {"job":{"job_id":"job_1767963689160_A","group_id":"A","status":"analyzing","progress":20},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:01:31.193Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:01:36.195Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:01:36.196Z] [HTTP] Body: {"job":{"job_id":"job_1767963689160_A","group_id":"A","status":"narrating","progress":60},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:01:36.197Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-09T13:01:41.202Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:01:41.203Z] [HTTP] Body: {"job":{"job_id":"job_1767963689160_A","group_id":"A","status":"done","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:01:41.203Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-09T13:01:57.687Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:01:57.697Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:19:37.706Z] WebSocket Server running on ws://localhost:3001
+[2026-01-09T13:19:37.708Z] Internal Notification Server running on http://localhost:3002
+[2026-01-09T13:51:42.376Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:51:47.408Z] WebSocket Server running on ws://localhost:3001
+[2026-01-09T13:51:47.410Z] Internal Notification Server running on http://localhost:3002
+[2026-01-09T13:52:37.147Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:52:37.157Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:52:53.887Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:52:53.889Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:52:53.889Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:52:53.895Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:52:53.896Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:52:53.896Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:52:56.055Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:52:56.056Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:52:56.057Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-09T13:53:52.211Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:53:52.220Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:53:55.045Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:53:55.046Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:53:55.046Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:53:55.047Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:53:55.047Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:53:55.047Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:53:57.206Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:53:57.208Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:53:57.209Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-09T13:57:20.458Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:57:20.459Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:57:20.460Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:57:20.462Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:57:20.462Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:57:20.463Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:57:24.335Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:57:24.337Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:57:24.337Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-09T13:58:27.061Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:58:28.691Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:58:28.692Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:58:28.692Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:58:28.692Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:58:28.693Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:58:28.693Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:58:31.399Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:58:31.401Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:58:31.401Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-09T13:58:41.455Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:58:41.456Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:58:41.456Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:58:41.457Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:58:41.457Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:58:41.457Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:58:44.082Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:58:44.083Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:58:44.083Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-09T13:59:41.510Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:59:41.520Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-09T13:59:42.597Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:59:42.602Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:59:42.602Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:59:42.604Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:59:42.604Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:59:42.604Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:59:44.614Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:59:44.616Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:59:44.616Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-09T13:59:48.027Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:59:48.030Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:59:48.031Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T13:59:48.035Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:59:48.037Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:59:48.037Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T13:59:50.114Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T13:59:50.115Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T13:59:50.116Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-09T14:03:14.956Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T14:03:14.969Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-09T14:03:14.973Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-09T14:03:14.986Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T14:03:14.987Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-09T14:03:14.987Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-09T14:03:29.681Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T14:03:29.683Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"narrating","progress":50},"workshopId":"ws_2026_demo"}
+[2026-01-09T14:03:29.683Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-09T14:03:32.959Z] [HTTP] Received request: POST /notify-update
+[2026-01-09T14:03:32.961Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"done","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-09T14:03:32.962Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-27T04:00:52.337Z] WebSocket Server running on ws://localhost:3001
+[2026-01-27T04:01:15.718Z] WebSocket Server running on ws://localhost:3001
+[2026-01-27T04:01:15.719Z] Internal Notification Server running on http://localhost:3002
+[2026-01-27T04:21:44.408Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T05:25:35.467Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T05:25:35.476Z] [HTTP] Body: {"job":{"job_id":"job_1769491535372_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-27T05:25:35.479Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T05:25:35.488Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T05:25:35.488Z] [HTTP] Body: {"job":{"job_id":"job_1769491535372_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T05:25:35.489Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T05:25:35.755Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T05:25:35.755Z] [HTTP] Body: {"job":{"job_id":"job_1769491535372_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T05:25:35.755Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-27T05:25:43.016Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T05:25:43.057Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T05:25:46.895Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T05:25:46.895Z] [HTTP] Body: {"job":{"job_id":"job_1769491546858_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T05:25:46.896Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T05:25:46.896Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T05:25:46.897Z] [HTTP] Body: {"job":{"job_id":"job_1769491546858_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-27T05:25:46.897Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T05:25:47.187Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T05:25:47.189Z] [HTTP] Body: {"job":{"job_id":"job_1769491546858_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T05:25:47.189Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-27T06:01:43.396Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:01:49.661Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:01:49.661Z] [HTTP] Body: {"job":{"job_id":"job_1767962481877_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:01:49.662Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:01:54.080Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:01:54.082Z] [HTTP] Body: {"job":{"job_id":"job_1767962495774_B","group_id":"B","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:01:54.082Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:01:55.925Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:01:55.927Z] [HTTP] Body: {"job":{"job_id":"job_1767963689160_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:01:55.927Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:01:59.079Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:01:59.082Z] [HTTP] Body: {"job":{"job_id":"job_1767966773788_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:01:59.083Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:02:01.239Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:02:01.240Z] [HTTP] Body: {"job":{"job_id":"job_1769479374870_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:02:01.240Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:02:05.342Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:02:05.343Z] [HTTP] Body: {"job":{"job_id":"job_1769484609914_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:02:05.343Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:02:07.395Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:02:07.395Z] [HTTP] Body: {"job":{"job_id":"job_1769486376283_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:02:07.395Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:02:09.507Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:02:09.507Z] [HTTP] Body: {"job":{"job_id":"job_1769491535372_A","group_id":"A","status":"deleted","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:02:09.508Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:38:46.355Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:38:46.378Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:38:52.077Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:38:52.080Z] [HTTP] Body: {"job":{"job_id":"job_1769495932038_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:38:52.081Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T06:38:52.083Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:38:52.083Z] [HTTP] Body: {"job":{"job_id":"job_1769495932038_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:38:52.085Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T06:38:52.559Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:38:52.559Z] [HTTP] Body: {"job":{"job_id":"job_1769495932038_A","group_id":"A","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:38:52.559Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-27T06:39:07.718Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:39:07.719Z] [HTTP] Body: {"job":{"job_id":"job_1769495947489_B","group_id":"B","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:39:07.719Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T06:39:07.720Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:39:07.721Z] [HTTP] Body: {"job":{"job_id":"job_1769495947489_B","group_id":"B","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:39:07.721Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T06:39:09.199Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:39:09.201Z] [HTTP] Body: {"job":{"job_id":"job_1769495947489_B","group_id":"B","status":"error","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:39:09.201Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: error
+[2026-01-27T06:49:19.184Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:49:23.409Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:49:23.410Z] [HTTP] Body: {"job":{"job_id":"job_1769491546858_A","group_id":"A","status":"deleted","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:49:23.411Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:49:24.961Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:49:24.964Z] [HTTP] Body: {"job":{"job_id":"job_1769495932038_A","group_id":"A","status":"deleted","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:49:24.965Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:49:26.897Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:49:26.897Z] [HTTP] Body: {"job":{"job_id":"job_1769495947489_B","group_id":"B","status":"deleted","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:49:26.898Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:49:44.797Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:49:44.798Z] [HTTP] Body: {"job":{"job_id":"job_1769496584774_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:49:44.799Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T06:49:44.801Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:49:44.801Z] [HTTP] Body: {"job":{"job_id":"job_1769496584774_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:49:44.803Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T06:49:58.962Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:49:58.963Z] [HTTP] Body: {"job":{"job_id":"job_1769496584774_A","group_id":"A","status":"narrating","progress":50},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:49:58.963Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-27T06:50:01.891Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:50:01.892Z] [HTTP] Body: {"job":{"job_id":"job_1769496584774_A","group_id":"A","status":"done","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:50:01.893Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-27T06:50:14.815Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:51:00.738Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:51:31.730Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:51:31.731Z] [HTTP] Body: {"job":{"job_id":"job_1769496691644_A","group_id":"A","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:51:31.731Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T06:51:31.731Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:51:31.731Z] [HTTP] Body: {"job":{"job_id":"job_1769496691644_A","group_id":"A","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:51:31.731Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T06:51:44.153Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:51:44.154Z] [HTTP] Body: {"job":{"job_id":"job_1769496691644_A","group_id":"A","status":"narrating","progress":50},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:51:44.154Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-27T06:51:48.036Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:51:48.036Z] [HTTP] Body: {"job":{"job_id":"job_1769496691644_A","group_id":"A","status":"done","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:51:48.036Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-27T06:53:39.286Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:53:39.287Z] [HTTP] Body: {"job":{"job_id":"job_1769496819269_B","group_id":"B","status":"uploaded","progress":0},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:53:39.287Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T06:53:39.289Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:53:39.290Z] [HTTP] Body: {"job":{"job_id":"job_1769496819269_B","group_id":"B","status":"analyzing","progress":10},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:53:39.290Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T06:53:48.089Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:53:48.090Z] [HTTP] Body: {"job":{"job_id":"job_1769496819269_B","group_id":"B","status":"narrating","progress":50},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:53:48.090Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-27T06:53:50.701Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:53:50.702Z] [HTTP] Body: {"job":{"job_id":"job_1769496819269_B","group_id":"B","status":"done","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:53:50.702Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-27T06:54:16.570Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:54:21.966Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:54:24.093Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:55:37.723Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:55:37.732Z] [HTTP] Body: {"job":{"job_id":"job_1769496937628_C","group_id":"C","status":"uploaded","progress":0,"title":"unnamed"},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:55:37.752Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-27T06:55:37.756Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:55:37.761Z] [HTTP] Body: {"job":{"job_id":"job_1769496937628_C","group_id":"C","status":"analyzing","progress":10,"title":"unnamed"},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:55:37.764Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-27T06:55:53.853Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:55:54.879Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:55:54.883Z] [HTTP] Body: {"job":{"job_id":"job_1769496937628_C","group_id":"C","status":"narrating","progress":50,"title":"unnamed"},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:55:54.883Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-27T06:55:57.802Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:55:57.803Z] [HTTP] Body: {"job":{"job_id":"job_1769496937628_C","group_id":"C","status":"done","progress":100,"title":"unnamed"},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:55:57.803Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-27T06:55:59.550Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:57:29.825Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:57:37.603Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-27T06:57:47.169Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:57:47.171Z] [HTTP] Body: {"job":{"job_id":"job_1769496584774_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:57:47.172Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:57:49.276Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:57:49.277Z] [HTTP] Body: {"job":{"job_id":"job_1769496691644_A","group_id":"A","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:57:49.277Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:57:51.069Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:57:51.069Z] [HTTP] Body: {"job":{"job_id":"job_1769496819269_B","group_id":"B","status":"deleted","progress":100},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:57:51.069Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-27T06:57:53.143Z] [HTTP] Received request: POST /notify-update
+[2026-01-27T06:57:53.145Z] [HTTP] Body: {"job":{"job_id":"job_1769496937628_C","group_id":"C","status":"deleted","progress":100,"title":"unnamed"},"workshopId":"ws_2026_demo"}
+[2026-01-27T06:57:53.146Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: deleted
+[2026-01-28T04:26:07.621Z] WebSocket Server running on ws://localhost:3001
+[2026-01-28T04:26:07.623Z] Internal Notification Server running on http://localhost:3002
+[2026-01-28T04:32:15.062Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:32:15.081Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:32:27.671Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:32:27.672Z] [HTTP] Body: {"job":{"job_id":"job_1769574747640_A","group_id":"A","status":"uploaded","progress":0,"title":"IMG_9770"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:32:27.672Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-28T04:32:27.674Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:32:27.674Z] [HTTP] Body: {"job":{"job_id":"job_1769574747640_A","group_id":"A","status":"analyzing","progress":10,"title":"IMG_9770"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:32:27.674Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-28T04:32:41.005Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:32:41.007Z] [HTTP] Body: {"job":{"job_id":"job_1769574747640_A","group_id":"A","status":"narrating","progress":50,"title":"IMG_9770"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:32:41.007Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-28T04:32:44.157Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:32:44.157Z] [HTTP] Body: {"job":{"job_id":"job_1769574747640_A","group_id":"A","status":"done","progress":100,"title":"IMG_9770"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:32:44.158Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-28T04:33:59.331Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:38:57.397Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:39:02.682Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:39:06.354Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:39:14.485Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:14.486Z] [HTTP] Body: {"job":{"job_id":"job_1769575154440_A","group_id":"A","status":"analyzing","progress":10,"title":"ホワイトボード写真","voice":"ja-JP-Neural2-B"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:14.489Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-28T04:39:14.490Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:14.490Z] [HTTP] Body: {"job":{"job_id":"job_1769575154440_A","group_id":"A","status":"uploaded","progress":0,"title":"ホワイトボード写真","voice":"ja-JP-Neural2-B"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:14.490Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-28T04:39:27.384Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:27.385Z] [HTTP] Body: {"job":{"job_id":"job_1769575154440_A","group_id":"A","status":"narrating","progress":50,"title":"ホワイトボード写真","voice":"ja-JP-Neural2-B"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:27.386Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-28T04:39:28.330Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:28.332Z] [HTTP] Body: {"job":{"job_id":"job_1769575168194_B","group_id":"B","status":"uploaded","progress":0,"title":"unnamed","voice":"ja-JP-Neural2-C"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:28.333Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: uploaded
+[2026-01-28T04:39:28.350Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:28.352Z] [HTTP] Body: {"job":{"job_id":"job_1769575168194_B","group_id":"B","status":"analyzing","progress":10,"title":"unnamed","voice":"ja-JP-Neural2-C"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:28.352Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: analyzing
+[2026-01-28T04:39:30.209Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:30.209Z] [HTTP] Body: {"job":{"job_id":"job_1769575154440_A","group_id":"A","status":"done","progress":100,"title":"ホワイトボード写真","voice":"ja-JP-Neural2-B"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:30.209Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-28T04:39:32.102Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:39:39.972Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:39:41.705Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:41.706Z] [HTTP] Body: {"job":{"job_id":"job_1769575168194_B","group_id":"B","status":"narrating","progress":50,"title":"unnamed","voice":"ja-JP-Neural2-C"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:41.706Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: narrating
+[2026-01-28T04:39:44.563Z] [HTTP] Received request: POST /notify-update
+[2026-01-28T04:39:44.564Z] [HTTP] Body: {"job":{"job_id":"job_1769575168194_B","group_id":"B","status":"done","progress":100,"title":"unnamed","voice":"ja-JP-Neural2-C"},"workshopId":"ws_2026_demo"}
+[2026-01-28T04:39:44.564Z] [WS] Broadcasting update for ws_2026_demo to 1 clients. Job: done
+[2026-01-28T04:39:44.629Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:39:53.661Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:39:58.415Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo
+[2026-01-28T04:40:03.649Z] New connection request. URL: /ws?workshop_id=ws_2026_demo, workshopId: ws_2026_demo

@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/google-credentials.json
+    volumes:
+      - ./data:/app/data
+      - ./public/audio:/app/public/audio
+      - ./google-credentials.json:/app/google-credentials.json

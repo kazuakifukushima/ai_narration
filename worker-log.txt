@@ -1,0 +1,141 @@
+[2026-01-09T13:58:28.599Z] [job_1767966773788_A] Starting job
+[2026-01-09T13:58:28.600Z] [job_1767966773788_A] Calling Gemini Vision...
+[2026-01-09T13:58:31.382Z] [job_1767966773788_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-09T13:58:41.364Z] [job_1767966773788_A] Starting job
+[2026-01-09T13:58:41.365Z] [job_1767966773788_A] Calling Gemini Vision...
+[2026-01-09T13:58:44.068Z] [job_1767966773788_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-09T13:59:42.503Z] [job_1767966773788_A] Starting job
+[2026-01-09T13:59:42.504Z] [job_1767966773788_A] Calling Gemini Vision...
+[2026-01-09T13:59:44.607Z] [job_1767966773788_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent: [404 Not Found] models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-09T13:59:47.924Z] [job_1767966773788_A] Starting job
+[2026-01-09T13:59:47.925Z] [job_1767966773788_A] Calling Gemini Vision...
+[2026-01-09T13:59:50.110Z] [job_1767966773788_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent: [404 Not Found] models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-09T14:03:14.807Z] [job_1767966773788_A] Starting job
+[2026-01-09T14:03:14.808Z] [job_1767966773788_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-09T14:03:29.611Z] [job_1767966773788_A] Gemini Response: ご提示いただいたホワイトボードの内容に基づき、新興感染症への外来対応における「基本4原則」を整理し、研修用のナレーション原稿を作成しました。
+
+---
+
+### [要約]
+
+**1. 疑う (Susp...
+[2026-01-09T14:03:29.617Z] [job_1767966773788_A] Calling TTS...
+[2026-01-09T14:03:32.936Z] [job_1767966773788_A] TTS Success. Saving file.
+[2026-01-27T02:02:54.874Z] [job_1769479374870_A] Starting job
+[2026-01-27T02:02:54.876Z] [job_1769479374870_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-27T02:03:06.406Z] [job_1769479374870_A] Gemini Response: ご提示いただいたホワイトボードの内容に基づき、議論の要点を整理し、医師会研修用のナレーション原稿を作成いたしました。
+
+---
+
+[要約]
+
+*   **疑う（迅速な検知と状況把握）**
+    * ...
+[2026-01-27T02:03:06.414Z] [job_1769479374870_A] Calling TTS...
+[2026-01-27T02:03:09.439Z] [job_1769479374870_A] TTS Success. Saving file.
+[2026-01-27T03:30:09.919Z] [job_1769484609914_A] Starting job
+[2026-01-27T03:30:09.920Z] [job_1769484609914_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-27T03:30:19.505Z] [job_1769484609914_A] Gemini Response: ご提示いただいたホワイトボードの内容に基づき、感染症対策における4つの重要な柱として整理・要約し、医師会研修用のナレーション原稿を作成しました。
+
+---
+
+### [要約]
+
+ホワイトボードには、医...
+[2026-01-27T03:30:19.514Z] [job_1769484609914_A] Calling TTS...
+[2026-01-27T03:30:23.210Z] [job_1769484609914_A] TTS Success. Saving file.
+[2026-01-27T03:59:36.297Z] [job_1769486376283_A] Starting job
+[2026-01-27T03:59:36.302Z] [job_1769486376283_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-27T03:59:49.712Z] [job_1769486376283_A] Gemini Response: ご提示いただいたホワイトボードの内容に基づき、議論の整理と研修用ナレーション原稿を作成しました。
+
+---
+
+### [要約]
+
+ホワイトボードでは、新興感染症における外来クリニックの役割を「診断」で...
+[2026-01-27T03:59:49.732Z] [job_1769486376283_A] Calling TTS...
+[2026-01-27T03:59:53.409Z] [job_1769486376283_A] TTS Success. Saving file.
+[2026-01-27T05:25:35.376Z] [job_1769491535372_A] Starting job
+[2026-01-27T05:25:35.378Z] [job_1769491535372_A] Calling Gemini Vision (1.5 Flash)...
+[2026-01-27T05:25:35.751Z] [job_1769491535372_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-27T05:25:46.863Z] [job_1769491546858_A] Starting job
+[2026-01-27T05:25:46.865Z] [job_1769491546858_A] Calling Gemini Vision (1.5 Flash)...
+[2026-01-27T05:25:47.182Z] [job_1769491546858_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-27T06:38:52.041Z] [job_1769495932038_A] Starting job
+[2026-01-27T06:38:52.043Z] [job_1769495932038_A] Calling Gemini Vision (1.5 Flash)...
+[2026-01-27T06:38:52.548Z] [job_1769495932038_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-27T06:39:07.502Z] [job_1769495947489_B] Starting job
+[2026-01-27T06:39:07.511Z] [job_1769495947489_B] Calling Gemini Vision (1.5 Flash)...
+[2026-01-27T06:39:09.186Z] [job_1769495947489_B] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2026-01-27T06:49:44.775Z] [job_1769496584774_A] Starting job
+[2026-01-27T06:49:44.776Z] [job_1769496584774_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-27T06:49:58.909Z] [job_1769496584774_A] Gemini Response: ご提示いただいたホワイトボードの内容を分析し、4つのカテゴリに整理した要約と、医師会研修用のナレーション原稿を作成しました。
+
+---
+
+### [要約]
+
+**1. 疑う（診断・疫学）**
+*   ...
+[2026-01-27T06:49:58.921Z] [job_1769496584774_A] Calling TTS...
+[2026-01-27T06:50:01.887Z] [job_1769496584774_A] TTS Success. Saving file.
+[2026-01-27T06:51:31.658Z] [job_1769496691644_A] Starting job
+[2026-01-27T06:51:31.664Z] [job_1769496691644_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-27T06:51:44.094Z] [job_1769496691644_A] Gemini Response: ご提示いただいたホワイトボードの内容に基づき、新興感染症への外来対応における4つの基本原則を整理し、研修用のナレーション原稿を作成しました。
+
+---
+
+### [要約]
+
+1.  **疑う (Sus...
+[2026-01-27T06:51:44.103Z] [job_1769496691644_A] Calling TTS...
+[2026-01-27T06:51:48.017Z] [job_1769496691644_A] TTS Success. Saving file.
+[2026-01-27T06:53:39.271Z] [job_1769496819269_B] Starting job
+[2026-01-27T06:53:39.272Z] [job_1769496819269_B] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-27T06:53:48.021Z] [job_1769496819269_B] Gemini Response: ---
+[要約]
+- 疑う: 症状の確認、検査の実施、流行状況の把握、感染経路の特定
+- 分ける: 動線の分離、隔離対応、消毒の徹底、ゾーニング
+- 守る: マスクの着用、手洗い・消毒、防護具、体調管...
+[2026-01-27T06:53:48.043Z] [job_1769496819269_B] Calling TTS...
+[2026-01-27T06:53:50.696Z] [job_1769496819269_B] TTS Success. Saving file.
+[2026-01-27T06:55:37.637Z] [job_1769496937628_C] Starting job
+[2026-01-27T06:55:37.645Z] [job_1769496937628_C] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-27T06:55:54.792Z] [job_1769496937628_C] Gemini Response: ご提示いただいたホワイトボードの画像に基づき、内容の要約と研修用ナレーション原稿を作成しました。
+
+---
+
+### [要約]
+
+*   **疑う**: 「診断」ではなく「検知」する意識を持つ。問診で...
+[2026-01-27T06:55:54.801Z] [job_1769496937628_C] Calling TTS...
+[2026-01-27T06:55:57.792Z] [job_1769496937628_C] TTS Success. Saving file.
+[2026-01-28T04:32:27.648Z] [job_1769574747640_A] Starting job
+[2026-01-28T04:32:27.649Z] [job_1769574747640_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-28T04:32:40.887Z] [job_1769574747640_A] Gemini Response: ---
+[要約]
+- 疑う: 渡航歴、動物接触歴、集団発生の有無を確認し、早期にリスクを察知する。
+- 分ける: 完璧を目指しすぎず、現実的な手法で物理的・時間的な分離を具体化する。
+- 守る: 感染...
+[2026-01-28T04:32:40.898Z] [job_1769574747640_A] Calling TTS...
+[2026-01-28T04:32:44.138Z] [job_1769574747640_A] TTS Success. Saving file.
+[2026-01-28T04:39:14.447Z] [job_1769575154440_A] Starting job
+[2026-01-28T04:39:14.448Z] [job_1769575154440_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-28T04:39:27.334Z] [job_1769575154440_A] Gemini Response: ---
+[要約]
+- 疑う: 症状の確認、検査の実施、流行状況の把握、感染経路の特定
+- 分ける: 動線の分離、隔離対応、消毒の徹底、ゾーニング
+- 守る: マスクの着用、手洗い・消毒、防護具、体調管...
+[2026-01-28T04:39:27.340Z] [job_1769575154440_A] Calling TTS... Voice: ja-JP-Neural2-B
+[2026-01-28T04:39:28.210Z] [job_1769575168194_B] Starting job
+[2026-01-28T04:39:28.213Z] [job_1769575168194_B] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-01-28T04:39:30.201Z] [job_1769575154440_A] TTS Success. Saving file.
+[2026-01-28T04:39:41.687Z] [job_1769575168194_B] Gemini Response: ---
+[要約]
+- **疑う**: 「診断」ではなく「検知」する意識を持ち、問診で渡航歴、動物接触歴、集団発生の有無を確認する。
+- **分ける**: 完璧を目指さず、別室（空間的）、診療時間をずら...
+[2026-01-28T04:39:41.694Z] [job_1769575168194_B] Calling TTS... Voice: ja-JP-Neural2-C
+[2026-01-28T04:39:44.552Z] [job_1769575168194_B] TTS Success. Saving file.
+[2026-02-09T14:16:50.928Z] [job_1770646610916_A] Starting job
+[2026-02-09T14:16:50.945Z] [job_1770646610916_A] Calling Gemini Vision (3.0 Flash Preview)...
+[2026-02-09T14:19:53.048Z] [job_1770646610916_A] Error: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
