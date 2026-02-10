@@ -52,7 +52,9 @@ app.prepare().then(() => {
             // Serve dynamically generated files (audio, uploads) directly
             // Next.js production mode may not serve files created after build
             if (pathname && (pathname.startsWith('/audio/') || pathname.startsWith('/uploads/'))) {
-                const filePath = path.join(process.cwd(), 'public', pathname);
+                // Use pathname without leading slash so path.join resolves under public/ (avoids absolute path issues on Linux/Docker)
+                const relativePath = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+                const filePath = path.join(process.cwd(), 'public', relativePath);
                 try {
                     await fs.promises.access(filePath, fs.constants.F_OK);
                     const ext = path.extname(filePath).toLowerCase();

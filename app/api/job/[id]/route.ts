@@ -6,7 +6,10 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     if (!result) {
         return NextResponse.json({ error: 'Result not ready' }, { status: 404 });
     }
-    return NextResponse.json(result);
+    // Return absolute audio URL so playback works on Render/Docker
+    const origin = req.nextUrl?.origin ?? new URL(req.url).origin;
+    const absoluteAudioUrl = result.audio_url.startsWith('http') ? result.audio_url : `${origin}${result.audio_url.startsWith('/') ? '' : '/'}${result.audio_url}`;
+    return NextResponse.json({ ...result, audio_url: absoluteAudioUrl });
 }
 
 export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
