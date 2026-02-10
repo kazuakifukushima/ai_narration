@@ -6,10 +6,10 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     if (!result) {
         return NextResponse.json({ error: 'Result not ready' }, { status: 404 });
     }
-    // ジョブIDで音声を返す URL に統一（Render で確実に再生するため）
-    const origin = req.nextUrl?.origin ?? new URL(req.url).origin;
-    const absoluteAudioUrl = `${origin}/api/job/${params.id}/audio`;
-    return NextResponse.json({ ...result, audio_url: absoluteAudioUrl });
+    // Render などのプロキシ環境では origin が localhost になる場合があるため、
+    // ブラウザ側で確実に同一オリジン解決される「相対パス」を返す
+    const audioPath = `/api/job/${params.id}/audio`;
+    return NextResponse.json({ ...result, audio_url: audioPath });
 }
 
 export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
