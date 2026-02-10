@@ -39,7 +39,7 @@ export async function GET(
     const start = parseInt(match[1], 10);
     const end = match[2] ? parseInt(match[2], 10) : stat.size - 1;
     const chunk = buffer.subarray(start, end + 1);
-    return new NextResponse(chunk, {
+    return new NextResponse(new Uint8Array(chunk), {
       status: 206,
       headers: {
         'Content-Type': 'audio/mpeg',
@@ -50,7 +50,7 @@ export async function GET(
     });
   }
 
-  return new NextResponse(buffer, {
+  return new NextResponse(new Uint8Array(buffer), {
     status: 200,
     headers: {
       'Content-Type': 'audio/mpeg',
