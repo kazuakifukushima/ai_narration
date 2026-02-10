@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getAudioDir } from '@/lib/audio-dir';
 import * as fs from 'fs';
 import * as path from 'path';
-
-const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 
 /**
  * GET /api/audio/[filename] — 音声ファイルを配信（Render/Docker で確実に再生するため Next.js API 経由で配信）
@@ -20,7 +19,7 @@ export async function GET(
     return NextResponse.json({ error: 'Only .mp3 allowed' }, { status: 400 });
   }
 
-  const filePath = path.join(AUDIO_DIR, filename);
+  const filePath = path.join(getAudioDir(), filename);
   let buffer: Buffer;
   let stat: fs.Stats;
   try {

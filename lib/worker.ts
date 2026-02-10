@@ -1,4 +1,5 @@
 import { saveJobResult, updateJob } from './db';
+import { getAudioDir } from './audio-dir';
 import { Job } from '@/types/job';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { TextToSpeechClient } from '@google-cloud/text-to-speech';
@@ -141,9 +142,9 @@ export async function startJob(jobId: string, groupId: string, filePath: string,
 
         log(`[${jobId}] TTS Success. Saving file.`);
 
-        // Save Audio File
+        // Save Audio File（AUDIO_OUTPUT_DIR 未設定時は public/audio、Render では /tmp/audio 推奨）
         const audioFileName = `${jobId}.mp3`;
-        const audioDir = path.join(process.cwd(), 'public/audio');
+        const audioDir = getAudioDir();
         if (!fs.existsSync(audioDir)) fs.mkdirSync(audioDir, { recursive: true });
 
         fs.writeFileSync(path.join(audioDir, audioFileName), audioBuffer, 'binary');

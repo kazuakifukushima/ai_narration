@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getJobResult } from '@/lib/db';
+import { getAudioDir } from '@/lib/audio-dir';
 import * as fs from 'fs';
 import * as path from 'path';
-
-const AUDIO_DIR = path.join(process.cwd(), 'public', 'audio');
 
 /**
  * GET /api/job/[id]/audio — ジョブIDで音声を配信（Render で確実に再生するためジョブ紐付けで配信）
@@ -25,7 +24,7 @@ export async function GET(
     return NextResponse.json({ error: 'Invalid audio url' }, { status: 500 });
   }
 
-  const filePath = path.join(AUDIO_DIR, filename);
+  const filePath = path.join(getAudioDir(), filename);
   let buffer: Buffer;
   let stat: fs.Stats;
   try {
