@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getJobs, saveJob } from '@/lib/db';
+import { getUploadsDir } from '@/lib/audio-dir';
 import { startJob } from '@/lib/worker';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -13,8 +14,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     }
 
     // Find the file (Warning: We need to know the original filename or search)
-    // Hack: Look in uploads dir for anything starting with jobId
-    const uploadDir = path.join(process.cwd(), 'public/uploads');
+    const uploadDir = getUploadsDir();
     const files = fs.readdirSync(uploadDir);
     const filename = files.find(f => f.startsWith(job.job_id));
 

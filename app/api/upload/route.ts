@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { saveJob } from '@/lib/db';
+import { getUploadsDir } from '@/lib/audio-dir';
 import { startJob } from '@/lib/worker';
 import { Job } from '@/types/job';
 import * as fs from 'fs';
@@ -19,7 +20,7 @@ export async function POST(req: NextRequest) {
 
         const jobId = `job_${Date.now()}_${groupId}`;
         const buffer = Buffer.from(await file.arrayBuffer());
-        const uploadDir = path.join(process.cwd(), 'public/uploads');
+        const uploadDir = getUploadsDir();
         if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
         const filePath = path.join(uploadDir, `${jobId}_${file.name}`);

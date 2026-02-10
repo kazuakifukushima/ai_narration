@@ -2,7 +2,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Job, JobResult } from '@/types/job';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+// Render などで data/ が書き込めない場合は DATA_DIR=/tmp/data を設定
+const DATA_DIR = process.env.DATA_DIR ?? path.join(process.cwd(), 'data');
 const DATA_FILE = path.join(DATA_DIR, 'jobs.json');
 const RESULTS_FILE = path.join(DATA_DIR, 'results.json');
 

@@ -11,8 +11,12 @@ services:
     envVars:
       - key: PORT
         value: 3000
+      - key: DATA_DIR
+        value: /tmp/data
       - key: AUDIO_OUTPUT_DIR
         value: /tmp/audio
+      - key: UPLOADS_DIR
+        value: /tmp/uploads
       - key: GEMINI_API_KEY
         sync: false # User must enter manually
       - key: GOOGLE_CREDENTIALS_JSON

@@ -12,7 +12,9 @@ const port = parseInt(process.env.PORT || '3000', 10);
 const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
 
-const DATA_FILE = path.join(process.cwd(), 'data/jobs.json');
+// Render では DATA_DIR=/tmp/data を設定（db.ts と同一にすること）
+const DATA_DIR = process.env.DATA_DIR || path.join(process.cwd(), 'data');
+const DATA_FILE = path.join(DATA_DIR, 'jobs.json');
 
 // Clients map: workshop_id -> Set<WebSocket>
 const clients = new Map<string, Set<WebSocket>>();
@@ -50,11 +52,13 @@ app.prepare().then(() => {
             const { pathname, query } = parsedUrl;
 
             // Serve dynamically generated files (audio, uploads) directly
-            // Next.js production mode may not serve files created after build
+            // Render では AUDIO_OUTPUT_DIR / UPLOADS_DIR で /tmp を指す
             if (pathname && (pathname.startsWith('/audio/') || pathname.startsWith('/uploads/'))) {
-                // Use pathname without leading slash so path.join resolves under public/ (avoids absolute path issues on Linux/Docker)
-                const relativePath = pathname.startsWith('/') ? pathname.slice(1) : pathname;
-                const filePath = path.join(process.cwd(), 'public', relativePath);
+                const baseDir = pathname.startsWith('/audio/')
+                    ? (process.env.AUDIO_OUTPUT_DIR || path.join(process.cwd(), 'public', 'audio'))
+                    : (process.env.UPLOADS_DIR || path.join(process.cwd(), 'public', 'uploads'));
+                const filename = pathname.replace(/^\/audio\//, '').replace(/^\/uploads\//, '');
+                const filePath = path.join(baseDir, filename);
                 try {
                     await fs.promises.access(filePath, fs.constants.F_OK);
                     const ext = path.extname(filePath).toLowerCase();
