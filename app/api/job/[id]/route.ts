@@ -6,10 +6,9 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     if (!result) {
         return NextResponse.json({ error: 'Result not ready' }, { status: 404 });
     }
-    // API 経由で音声を配信する URL に変換（Render/Docker で確実に再生するため）
-    const audioPath = result.audio_url.replace(/^\/audio\//, '/api/audio/');
+    // ジョブIDで音声を返す URL に統一（Render で確実に再生するため）
     const origin = req.nextUrl?.origin ?? new URL(req.url).origin;
-    const absoluteAudioUrl = result.audio_url.startsWith('http') ? result.audio_url : `${origin}${audioPath.startsWith('/') ? '' : '/'}${audioPath}`;
+    const absoluteAudioUrl = `${origin}/api/job/${params.id}/audio`;
     return NextResponse.json({ ...result, audio_url: absoluteAudioUrl });
 }
 

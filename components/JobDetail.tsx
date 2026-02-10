@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 export default function JobDetail({ result }: { result: JobResult }) {
   const [copied, setCopied] = useState(false);
+  const [audioError, setAudioError] = useState<string | null>(null);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(result.summary_text);
@@ -25,10 +26,19 @@ export default function JobDetail({ result }: { result: JobResult }) {
           <h3 className="text-sm font-semibold text-indigo-900">Audio Narration</h3>
         </div>
         <audio
+          key={result.audio_url}
           controls
           src={result.audio_url}
           className="w-full h-10 accent-indigo-600"
+          preload="metadata"
+          onError={() => setAudioError('音声の読み込みに失敗しました。しばらくしてから再試行するか、ページを更新してください。')}
+          onCanPlayThrough={() => setAudioError(null)}
         />
+        {audioError && (
+          <p className="mt-2 text-sm text-amber-700 bg-amber-50 rounded-lg p-2" role="alert">
+            {audioError}
+          </p>
+        )}
       </div>
 
       {/* Script Section */}
